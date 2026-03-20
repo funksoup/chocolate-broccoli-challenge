@@ -51,77 +51,12 @@ No frameworks, no libraries, no build tools, no dependencies — just files. Ope
 
 ---
 
-## Running Locally
 
-No installation needed.
+## Using This Tool
 
-```bash
-git clone https://github.com/funksoup/chocolate-broccoli-challenge.git
-cd chocolate-broccoli-challenge
-open index.html        # macOS
-# or: start index.html  (Windows)
-# or: xdg-open index.html  (Linux)
-```
+**Just want to use it?** → [Try the live demo](https://funksoup.github.io/chocolate-broccoli-challenge/) — no account, no install, works in any browser.
 
-That's it. No `npm install`, no build step, no server.
-
----
-
-## Deploying to GitHub Pages (free hosting)
-
-1. Push the repo to GitHub (see instructions below)
-2. Go to your repo → **Settings** → **Pages**
-3. Under *Source*, select **Deploy from a branch**
-4. Choose branch: **`main`**, folder: **`/ (root)`**
-5. Click **Save**
-6. Your live URL will be: `https://funksoup.github.io/chocolate-broccoli-challenge/`
-
-It takes about 60 seconds to go live after the first push.
-
----
-
-## Publishing to GitHub (step by step)
-
-If you're new to GitHub, here's the full process:
-
-### 1. Create a GitHub account
-Go to [github.com](https://github.com) and sign up (free).
-
-### 2. Create a new repository
-- Click the **+** icon → **New repository**
-- Name it: `chocolate-broccoli-challenge`
-- Set it to **Public** (required for free GitHub Pages)
-- **Do not** initialize with a README (you already have one)
-- Click **Create repository**
-
-### 3. Push the files from your computer
-
-Open Terminal (Mac) or Command Prompt (Windows) and run:
-
-```bash
-cd path/to/chocolate-broccoli-challenge
-
-git init
-git add .
-git commit -m "Initial commit: Chocolate-Covered Broccoli Challenge"
-git branch -M main
-git remote add origin https://github.com/funksoup/chocolate-broccoli-challenge.git
-git push -u origin main
-```
-
-Replace `funksoup` with your actual GitHub username.
-
-### 4. Enable GitHub Pages
-Follow the steps in the *Deploying to GitHub Pages* section above.
-
-### 5. Update the demo link in this README
-Replace `funksoup` in the live demo link at the top with your actual username, then commit:
-
-```bash
-git add README.md
-git commit -m "Add live demo link"
-git push
-```
+**Want your own hosted copy to customize?** → [Fork this repo](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) and enable GitHub Pages in your fork's **Settings → Pages** (set branch to `main`, folder to `/ (root)`). Your copy will be live at `https://YOUR-USERNAME.github.io/chocolate-broccoli-challenge/` within a minute.
 
 ---
 
