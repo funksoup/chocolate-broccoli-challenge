@@ -1,0 +1,202 @@
+{
+  "resources": {
+    "id": "resources",
+    "emoji": "💰",
+    "title": "Manage Resources",
+    "tagline": "Limited stuff = hard choices",
+    "description": "Players have limited resources — time, money, materials, energy — and must make strategic choices about how to allocate them. Every decision has a cost, and running out means failure.",
+    "why_it_works": [
+      "Forces prioritization and strategic thinking naturally embedded in the subject matter",
+      "Understanding the subject helps players optimize resource use — knowledge is the winning edge",
+      "Natural, immediate feedback: poor choices deplete resources and telegraph failure before it happens",
+      "Creates genuine tension and investment without a single quiz question"
+    ],
+    "examples": [
+      {
+        "title": "Cell Survival",
+        "subject": "Biology (cellular respiration)",
+        "description": "Students manage limited oxygen and glucose tokens to keep a cell alive through multiple rounds. Understanding how cellular respiration converts glucose into ATP helps them spend resources efficiently — a player who knows the Krebs cycle wastes nothing."
+      },
+      {
+        "title": "Sentence Architect",
+        "subject": "English (grammar)",
+        "description": "Build the strongest sentence possible using a hand of limited word cards (nouns, verbs, adjectives, conjunctions). Grammar knowledge is the key advantage: knowing which parts of speech are essential vs. decorative makes every card count."
+      }
+    ]
+  },
+  "risk": {
+    "id": "risk",
+    "emoji": "⚖️",
+    "title": "Make Risky Bets",
+    "tagline": "Gamble for bigger rewards",
+    "description": "Players choose between safe, guaranteed outcomes and riskier actions that could yield big rewards or costly setbacks. The subject knowledge informs which bets are worth taking.",
+    "why_it_works": [
+      "Creates emotional investment — players feel the stakes of every decision",
+      "Subject mastery reduces perceived risk, rewarding knowledge with confidence",
+      "Models real-world decision-making under uncertainty (science, economics, history)",
+      "Risk-and-reward loops generate the 'one more try' drive naturally"
+    ],
+    "examples": [
+      {
+        "title": "Market Gamble",
+        "subject": "Economics (supply and demand)",
+        "description": "Players bet tokens on which fictional product will sell more given a set of market conditions. Students who understand supply and demand curves identify the 'safer' bets, gaining an edge without memorizing definitions."
+      },
+      {
+        "title": "Chemical Reaction Roulette",
+        "subject": "Chemistry (reaction types)",
+        "description": "Players choose between low-yield safe reactions and high-yield risky ones. Knowing whether a reaction is exothermic or endothermic, and what conditions it needs, lets students predict outcomes and bet confidently."
+      }
+    ]
+  },
+  "puzzles": {
+    "id": "puzzles",
+    "emoji": "🧩",
+    "title": "Solve Puzzles",
+    "tagline": "Figure out how pieces fit",
+    "description": "Players are presented with a challenge that has a satisfying solution. Finding it requires applying conceptual knowledge — the puzzle IS the learning, not a wrapper around it.",
+    "why_it_works": [
+      "The 'aha!' moment of solving creates a strong memory anchor for the concept",
+      "Puzzle-solving intrinsically motivates persistence — players don't give up because it's fun",
+      "Multiple solution paths allow for creative application of knowledge",
+      "Scales beautifully: easier puzzles build foundations, harder ones challenge mastery"
+    ],
+    "examples": [
+      {
+        "title": "Ecosystem Jigsaw",
+        "subject": "Environmental Science (food webs)",
+        "description": "Players receive organism cards and must arrange them into a stable food web. Remove the wrong species and the whole chain collapses. Understanding producer-consumer-decomposer relationships is the only way to solve it."
+      },
+      {
+        "title": "Equation Cipher",
+        "subject": "Algebra (solving equations)",
+        "description": "A secret message is encoded in a system of equations. Each solved variable reveals a letter. Students must isolate variables and substitute values to decode the full message — the math IS the puzzle."
+      }
+    ]
+  },
+  "timer": {
+    "id": "timer",
+    "emoji": "⏱️",
+    "title": "Beat the Clock",
+    "tagline": "Quick decisions under pressure",
+    "description": "A time limit forces players to make rapid decisions, building fluency with material rather than slow recall. The pressure creates excitement and mimics real-world application of knowledge.",
+    "why_it_works": [
+      "Builds automaticity — knowledge must be fast and confident, not just present",
+      "Creates shared excitement and energy in classroom settings",
+      "Time pressure reveals what students truly understand vs. what they can look up",
+      "Short rounds mean fast feedback loops: lose fast, learn fast, try again"
+    ],
+    "examples": [
+      {
+        "title": "Vocabulary Sprint",
+        "subject": "World Languages (vocabulary)",
+        "description": "Players have 30 seconds to match as many foreign words to images as possible. No time to guess — fluency wins. The clock creates urgency that makes even practice feel like a real challenge."
+      },
+      {
+        "title": "Historical Timeline Dash",
+        "subject": "History (chronology)",
+        "description": "A stack of event cards must be arranged in chronological order before the timer runs out. Students who know their history place cards instantly; students who don't feel the gap — and want to fix it."
+      }
+    ]
+  },
+  "compete": {
+    "id": "compete",
+    "emoji": "🏆",
+    "title": "Compete to Win",
+    "tagline": "Race against others",
+    "description": "Players go head-to-head against each other, with subject knowledge as the primary competitive advantage. The desire to win drives deeper engagement with the material.",
+    "why_it_works": [
+      "Competition is a universal motivator — nobody wants to lose because they didn't study",
+      "Social stakes elevate engagement far beyond solo practice",
+      "Watching peers succeed with their knowledge makes the value of learning visible",
+      "Can be structured as team competition to include collaboration benefits too"
+    ],
+    "examples": [
+      {
+        "title": "Debate Duel",
+        "subject": "Social Studies (government/civics)",
+        "description": "Two players argue opposite sides of a policy issue using evidence cards. The audience votes on the most convincing argument. Students must actually understand the evidence to deploy it effectively."
+      },
+      {
+        "title": "Physics Race",
+        "subject": "Physics (motion and forces)",
+        "description": "Players design a paper roller coaster and compete for whose marble travels furthest. Understanding energy transfer, friction, and momentum gives designers an edge that textbooks alone can't provide."
+      }
+    ]
+  },
+  "cooperate": {
+    "id": "cooperate",
+    "emoji": "🤝",
+    "title": "Work Together",
+    "tagline": "Team up to succeed",
+    "description": "Players must collaborate, share information, and combine their knowledge to overcome challenges no single player could beat alone. Designed so different pieces of knowledge are distributed across the team.",
+    "why_it_works": [
+      "Distributes knowledge roles: each student becomes an expert in one area",
+      "Teaching teammates reinforces learning more powerfully than re-reading notes",
+      "Creates positive interdependence — everyone's contribution genuinely matters",
+      "Models real-world collaborative problem-solving in science, business, and more"
+    ],
+    "examples": [
+      {
+        "title": "Body Systems Rescue",
+        "subject": "Biology (human body systems)",
+        "description": "Each player controls one body system (circulatory, nervous, digestive) and must share information with teammates to diagnose and treat a 'patient.' No one player has enough info to win alone."
+      },
+      {
+        "title": "Expedition Map",
+        "subject": "Geography (world regions)",
+        "description": "Teams plan a global expedition where each member is an expert on different regions. Choosing the right routes, supplies, and timing requires combining everyone's regional knowledge into a cohesive plan."
+      }
+    ]
+  },
+  "roleplay": {
+    "id": "roleplay",
+    "emoji": "🎭",
+    "title": "Play a Role",
+    "tagline": "Become someone else",
+    "description": "Players take on a specific character, persona, or perspective and must make decisions that character would make given the subject context. Empathy and knowledge combine to drive play.",
+    "why_it_works": [
+      "Perspective-taking deepens understanding far beyond surface-level recall",
+      "Emotional connection to a character creates memorable, personal learning moments",
+      "Historical, scientific, and literary figures come to life through player decisions",
+      "Expressive freedom attracts students who disengage from traditional formats"
+    ],
+    "examples": [
+      {
+        "title": "Founding Fathers Forum",
+        "subject": "History (U.S. Constitutional Convention)",
+        "description": "Each player takes a historical delegate's role and must argue their state's position on key issues using actual historical arguments. Understanding each delegate's context is essential to playing the role convincingly."
+      },
+      {
+        "title": "Literary Character Council",
+        "subject": "English Literature",
+        "description": "Students roleplay as characters from a shared novel, convening to debate how a plot decision should unfold. Knowing the character's motivations, fears, and relationships is the entire advantage."
+      }
+    ]
+  },
+  "build": {
+    "id": "build",
+    "emoji": "🎨",
+    "title": "Build Something",
+    "tagline": "Create and design freely",
+    "description": "Players construct, design, or create something — a structure, a system, a product — using subject knowledge as their blueprint. The freedom to create drives ownership and pride in learning.",
+    "why_it_works": [
+      "Creative ownership creates the deepest form of engagement and retention",
+      "Building exposes misconceptions that multiple-choice answers never would",
+      "Tangible outputs let students see and share what they've learned",
+      "Open-ended design allows for differentiation — every student can succeed at their level"
+    ],
+    "examples": [
+      {
+        "title": "City Planner",
+        "subject": "Social Studies (urban systems / civics)",
+        "description": "Students design a functional city on a grid, choosing locations for schools, hospitals, power plants, and parks. Understanding how city systems interact — and who they serve — determines whether the city 'passes' its livability score."
+      },
+      {
+        "title": "Invention Lab",
+        "subject": "Physics / Engineering (simple machines)",
+        "description": "Players design a Rube Goldberg machine using simple machine cards (lever, pulley, inclined plane). Each machine in the chain must physically make sense — understanding mechanical advantage is the design constraint."
+      }
+    ]
+  }
+}

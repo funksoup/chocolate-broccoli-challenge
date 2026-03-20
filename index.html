@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chocolate-Covered Broccoli Challenge</title>
+  <meta name="description" content="Design genuinely fun educational games — step by step." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!--  APP HEADER                                               -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <header class="app-header">
+    <span class="app-logo" aria-hidden="true">🍫🥦</span>
+    <h1>Chocolate-Covered Broccoli Challenge</h1>
+    <p class="subtitle">Design educational games that are genuinely fun — not just broccoli in disguise</p>
+  </header>
+
+  <main class="app-container">
+
+    <!-- ── Progress Bar ── -->
+    <section class="progress-section" aria-label="Overall progress">
+      <div class="progress-header">
+        <span class="progress-label">Your Progress</span>
+        <div style="display:flex;align-items:center;gap:0.75rem">
+          <span class="progress-percent" id="progress-percent">0%</span>
+          <button
+            id="global-reset-btn"
+            title="Reset all progress and start over"
+            aria-label="Reset all progress and start over"
+            style="background:rgba(255,255,255,0.15);border:1.5px solid rgba(255,255,255,0.35);color:rgba(255,255,255,0.9);border-radius:8px;padding:0.45rem 1rem;font-family:inherit;font-size:0.88rem;font-weight:600;cursor:pointer;transition:all 0.2s ease;white-space:nowrap"
+            onmouseover="this.style.background='rgba(255,255,255,0.28)'"
+            onmouseout="this.style.background='rgba(255,255,255,0.15)'"
+          >↩ Start Over</button>
+        </div>
+      </div>
+      <div class="progress-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+    </section>
+
+    <!-- ── Badge Row ── -->
+    <div class="badges-row" role="list" aria-label="Achievement badges">
+      <div class="badge-item" id="badge1" role="listitem" aria-label="Mechanic Master badge">
+        <span class="badge-icon" aria-hidden="true">💡</span>
+        <span class="badge-name">Mechanic Master</span>
+      </div>
+      <div class="badge-item" id="badge2" role="listitem" aria-label="Fun Evaluator badge">
+        <span class="badge-icon" aria-hidden="true">🎯</span>
+        <span class="badge-name">Fun Evaluator</span>
+      </div>
+      <div class="badge-item" id="badge3" role="listitem" aria-label="Designer badge">
+        <span class="badge-icon" aria-hidden="true">📝</span>
+        <span class="badge-name">Designer</span>
+      </div>
+      <div class="badge-item" id="badge4" role="listitem" aria-label="Analyzer badge">
+        <span class="badge-icon" aria-hidden="true">🔬</span>
+        <span class="badge-name">Analyzer</span>
+      </div>
+      <div class="badge-item" id="badge5" role="listitem" aria-label="Game Creator badge">
+        <span class="badge-icon" aria-hidden="true">🏆</span>
+        <span class="badge-name">Game Creator</span>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <!--  LEVEL 1: MECHANIC SELECTION                             -->
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <article class="level-card active" id="level-card-1" aria-labelledby="level1-title">
+      <div class="level-card-header">
+        <div class="level-number" aria-hidden="true">1</div>
+        <div class="level-card-title">
+          <h2 id="level1-title">Choose Your Game Mechanic</h2>
+          <p>The core engine that makes your game feel like a game</p>
+        </div>
+        <span class="level-status-icon" aria-hidden="true">🎮</span>
+      </div>
+
+      <div class="level-card-body">
+        <div class="tip-box" role="note">
+          <span aria-hidden="true">💡</span>
+          <span>You can select <strong>up to 2 mechanics</strong> to combine them!</span>
+        </div>
+
+        <!-- 8 Mechanic Cards Grid -->
+        <div class="mechanic-grid" id="mechanic-grid" role="list" aria-label="Game mechanics to choose from">
+          <!-- Populated by level1-mechanics.js -->
+        </div>
+
+        <!-- Continue Button -->
+        <div class="btn-row">
+          <button
+            class="btn btn-primary btn-lg"
+            id="level1-continue-btn"
+            disabled
+            aria-describedby="level1-tip"
+          >
+            Continue to Fun Guidelines →
+          </button>
+        </div>
+        <p class="text-muted text-center mt-1" id="level1-tip">Select at least 1 mechanic to continue</p>
+      </div>
+    </article>
+
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <!--  LEVEL 2: FUN TEST                                       -->
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <article class="level-card locked" id="level-card-2" aria-labelledby="level2-title">
+      <div class="level-card-header">
+        <div class="level-number" aria-hidden="true">2</div>
+        <div class="level-card-title">
+          <h2 id="level2-title">Fun Guidelines</h2>
+          <p>5 principles that reveal whether your mechanic will feel genuinely fun</p>
+        </div>
+        <span class="level-status-icon" aria-hidden="true">🎯</span>
+      </div>
+
+      <div class="level-card-body">
+        <p style="margin-bottom:1.25rem;color:var(--muted);font-size:0.9rem;font-style:italic">
+          Think about your mechanic idea from Level 1. These aren't pass/fail questions — they're guidelines for what makes a game genuinely worth playing.
+        </p>
+
+        <!-- Questions Container -->
+        <div id="fun-questions-container" role="group" aria-label="Fun test questions">
+          <!-- Populated by level2-fun-test.js -->
+        </div>
+
+        <!-- Score Meter -->
+        <div class="fun-score-meter" aria-live="polite" aria-label="Fun score meter">
+          <div class="fun-score-label">
+            <span id="fun-score-value">Fun Score: 0/5</span>
+          </div>
+          <div class="fun-score-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="5">
+            <div class="fun-score-fill" id="fun-score-fill"></div>
+          </div>
+          <div class="score-result-box" id="fun-result-box" style="display:none"></div>
+        </div>
+
+        <!-- Continue Button -->
+        <div class="btn-row" style="margin-top:1.25rem">
+          <button
+            class="btn btn-primary btn-lg"
+            id="level2-continue-btn"
+            disabled
+          >
+            Continue to Design Your Game →
+          </button>
+        </div>
+        <p class="text-muted text-center mt-1">Check all 5 questions to continue</p>
+      </div>
+    </article>
+
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <!--  LEVEL 3: GAME DESIGNER                                  -->
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <article class="level-card locked" id="level-card-3" aria-labelledby="level3-title">
+      <div class="level-card-header">
+        <div class="level-number" aria-hidden="true">3</div>
+        <div class="level-card-title">
+          <h2 id="level3-title">Design Your Game</h2>
+          <p>The 4-step blueprint — from learning goals to gameplay loops</p>
+        </div>
+        <span class="level-status-icon" aria-hidden="true">📝</span>
+      </div>
+
+      <div class="level-card-body" id="level3-wizard-body">
+
+        <!-- Wizard Tabs -->
+        <nav class="wizard-tabs" role="tablist" aria-label="Design wizard steps">
+          <button class="wizard-tab active" role="tab" aria-selected="true" aria-controls="wizard-step-1">Step 1 of 4<br><small>Learning Goals</small></button>
+          <button class="wizard-tab" role="tab" aria-selected="false" aria-controls="wizard-step-2">Step 2 of 4<br><small>Mechanic Link</small></button>
+          <button class="wizard-tab" role="tab" aria-selected="false" aria-controls="wizard-step-3">Step 3 of 4<br><small>Gameplay Loop</small></button>
+          <button class="wizard-tab" role="tab" aria-selected="false" aria-controls="wizard-step-4">Step 4 of 4<br><small>Win / Lose</small></button>
+        </nav>
+
+        <!-- Autosave indicator -->
+        <div class="autosave-indicator" id="autosave-indicator" aria-live="polite">
+          <span aria-hidden="true">✓</span> Saved!
+        </div>
+
+        <!-- ── Step 1: Learning Goals ── -->
+        <div class="wizard-step active" id="wizard-step-1" role="tabpanel">
+          <p class="section-title">Step 1 — Learning Goals</p>
+
+          <div class="form-group">
+            <label class="form-label" for="field-topic">Topic <span class="required" aria-hidden="true">*</span></label>
+            <input type="text" id="field-topic" class="form-control" placeholder="e.g. Biology: Cellular Respiration · Algebra: Quadratic Equations · History: Causes of WWI" aria-required="true" />
+            <div class="form-error" id="error-topic" role="alert"></div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="field-understanding">Students will UNDERSTAND: <span class="required" aria-hidden="true">*</span></label>
+            <textarea id="field-understanding" class="form-control" rows="3" placeholder="What conceptual knowledge will they gain? (e.g. how cells convert glucose to ATP through a multi-step process)" aria-required="true"></textarea>
+            <div class="form-error" id="error-understanding" role="alert"></div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="field-skills">Students will be able to DO: <span class="required" aria-hidden="true">*</span></label>
+            <textarea id="field-skills" class="form-control" rows="3" placeholder="What skills will they develop? (e.g. prioritize resource allocation, predict outcomes of metabolic changes)" aria-required="true"></textarea>
+            <div class="form-error" id="error-skills" role="alert"></div>
+          </div>
+
+          <div class="step-nav">
+            <span></span>
+            <button class="btn btn-primary" data-next-step="2">Next: Mechanic Connection →</button>
+          </div>
+        </div>
+
+        <!-- ── Step 2: Mechanic Connection ── -->
+        <div class="wizard-step" id="wizard-step-2" role="tabpanel">
+          <p class="section-title">Step 2 — How Learning Connects to Play</p>
+
+          <div class="form-group">
+            <label class="form-label">Your Selected Mechanics:</label>
+            <div class="mechanic-badges-display" id="selected-mechanics-display" aria-label="Selected mechanics">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="field-mechanic_connection">How Learning Connects to Play <span class="required" aria-hidden="true">*</span></label>
+            <textarea
+              id="field-mechanic_connection"
+              class="form-control"
+              rows="5"
+              placeholder="Explain HOW understanding the topic helps players succeed in the game. The key test: does a student who knows more of the subject genuinely play better?
+
+Real-world examples of strong connections:
+• Pythagorean theorem → Players choose the shortest walking path across a park. Knowing a² + b² = c² means you can calculate the diagonal shortcut and win the race; guessing just costs you time.
+• Geometry / measurement → Teams choose a couch from a catalog that will fit through a doorway. You must calculate dimensions and angles — the right answer is the only one that works.
+• Photosynthesis → Players allocate limited sunlight and water tokens each round to grow the tallest plant. Knowing which inputs produce the most glucose directly improves your strategy.
+• Fractions → Players split a limited supply of ingredients to feed the most people. Knowing how to compare ½ vs ⅓ lets you stretch resources further than opponents who guess.
+• Supply &amp; demand → Players set the price of their fictional product each round. Understanding the demand curve means you price it to sell out — not too high, not too low.
+
+Describe YOUR connection: why does knowing the subject make a player better at THIS mechanic?"
+              aria-required="true"
+            ></textarea>
+            <div class="form-error" id="error-mechanic_connection" role="alert"></div>
+          </div>
+
+          <!-- Mechanic-specific questions injected here by level3-designer.js -->
+          <div id="mechanic-specific-questions"></div>
+
+          <div class="step-nav">
+            <button class="btn btn-outline" data-prev-step="1">← Back</button>
+            <button class="btn btn-primary" data-next-step="3">Next: Gameplay Loop →</button>
+          </div>
+        </div>
+
+        <!-- ── Step 3: Core Gameplay Loop (ODAR) ── -->
+        <div class="wizard-step" id="wizard-step-3" role="tabpanel">
+          <p class="section-title">Step 3 — Core Gameplay Loop (ODAR Framework)</p>
+          <p style="margin-bottom:1rem;font-size:0.88rem;color:var(--muted)">Every turn, players cycle through: Observe → Decide → Act → Result. Define each phase for your game.</p>
+
+          <div class="odar-grid">
+            <div class="odar-item">
+              <div class="odar-label">👁️ OBSERVE</div>
+              <div class="form-group" style="margin-bottom:0">
+                <label class="form-label" for="field-observe">What do players see? <span class="required" aria-hidden="true">*</span></label>
+                <textarea id="field-observe" class="form-control" rows="3" placeholder="What information is visible to the player at the start of each turn? What's their game state?" aria-required="true"></textarea>
+                <div class="form-error" id="error-observe" role="alert"></div>
+              </div>
+            </div>
+
+            <div class="odar-item">
+              <div class="odar-label">🤔 DECIDE</div>
+              <div class="form-group" style="margin-bottom:0">
+                <label class="form-label" for="field-decide">What choices do they make? <span class="required" aria-hidden="true">*</span></label>
+                <textarea id="field-decide" class="form-control" rows="3" placeholder="What decision does the player face? What are the trade-offs? (Use words like: choose, allocate, risk, manage)" aria-required="true"></textarea>
+                <div class="form-error" id="error-decide" role="alert"></div>
+              </div>
+            </div>
+
+            <div class="odar-item">
+              <div class="odar-label">⚡ ACT</div>
+              <div class="form-group" style="margin-bottom:0">
+                <label class="form-label" for="field-act">What do they do? <span class="required" aria-hidden="true">*</span></label>
+                <textarea id="field-act" class="form-control" rows="3" placeholder="What is the physical or mechanical action? Play a card, move a token, spend a resource, roll a die..." aria-required="true"></textarea>
+                <div class="form-error" id="error-act" role="alert"></div>
+              </div>
+            </div>
+
+            <div class="odar-item">
+              <div class="odar-label">✨ RESULT</div>
+              <div class="form-group" style="margin-bottom:0">
+                <label class="form-label" for="field-result">What happens? <span class="required" aria-hidden="true">*</span></label>
+                <textarea id="field-result" class="form-control" rows="3" placeholder="What feedback does the player receive? What changes in the game state? How do they see the consequence of their decision?" aria-required="true"></textarea>
+                <div class="form-error" id="error-result" role="alert"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="step-nav">
+            <button class="btn btn-outline" data-prev-step="2">← Back</button>
+            <button class="btn btn-primary" data-next-step="4">Next: Win / Lose →</button>
+          </div>
+        </div>
+
+        <!-- ── Step 4: Win/Lose Conditions ── -->
+        <div class="wizard-step" id="wizard-step-4" role="tabpanel">
+          <p class="section-title">Step 4 — Win &amp; Lose Conditions</p>
+
+          <div class="form-group">
+            <label class="form-label" for="field-victory">Victory — How do players win? <span class="required" aria-hidden="true">*</span></label>
+            <textarea
+              id="field-victory"
+              class="form-control"
+              rows="4"
+              placeholder="Describe the winning state. Tip: the best victories are strategic outcomes, not 'answer X questions correctly.' Example: 'Players win when their ecosystem sustains 5 species for 3 full rounds.'"
+              aria-required="true"
+            ></textarea>
+            <div class="form-error" id="error-victory" role="alert"></div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="field-failure">Failure — How do players lose? <span class="required" aria-hidden="true">*</span></label>
+            <textarea
+              id="field-failure"
+              class="form-control"
+              rows="4"
+              placeholder="Describe the losing state. Tip: failure should feel like a natural consequence, not a punishment. Example: 'Players lose when their cell runs out of ATP and can no longer perform active transport.'"
+              aria-required="true"
+            ></textarea>
+            <div class="form-error" id="error-failure" role="alert"></div>
+          </div>
+
+          <!-- Auto-Fill & Download -->
+          <div class="autofill-btn-wrapper">
+            <p>When you're happy with your design, send it to the Evaluator for analysis.</p>
+            <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap">
+              <button class="btn btn-golden btn-lg" id="autofill-evaluator-btn">
+                🚀 Auto-Fill Evaluator (Part 4)
+              </button>
+              <button class="btn btn-outline" id="download-blueprint-btn">
+                ⬇ Download Blueprint (.md)
+              </button>
+            </div>
+          </div>
+
+          <div class="step-nav">
+            <button class="btn btn-outline" data-prev-step="3">← Back</button>
+            <span></span>
+          </div>
+        </div>
+
+      </div><!-- /.level-card-body -->
+    </article>
+
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <!--  LEVEL 4: EVALUATOR                                      -->
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <article class="level-card locked" id="level-card-4" aria-labelledby="level4-title">
+      <div class="level-card-header">
+        <div class="level-number" aria-hidden="true">4</div>
+        <div class="level-card-title">
+          <h2 id="level4-title">Evaluate Your Design</h2>
+          <p>Run your blueprint through the chocolate-broccoli detector</p>
+        </div>
+        <span class="level-status-icon" aria-hidden="true">🔬</span>
+      </div>
+
+      <div class="level-card-body">
+        <p style="margin-bottom:1rem;font-size:0.88rem;color:var(--muted)">
+          Your design blueprint has been automatically imported. Review it below, then click Evaluate.
+        </p>
+
+        <!-- Blueprint Preview -->
+        <details style="margin-bottom:1.25rem">
+          <summary style="cursor:pointer;font-weight:600;font-size:0.9rem;color:var(--cyan);margin-bottom:0.5rem">View Blueprint</summary>
+          <div class="eval-blueprint-preview" id="eval-blueprint-preview" aria-label="Design blueprint content">
+            No blueprint yet — complete the Designer (Level 3) first.
+          </div>
+        </details>
+
+        <!-- Evaluate Button -->
+        <div class="text-center" style="margin-bottom:1.25rem">
+          <button class="btn btn-golden btn-lg" id="evaluate-btn" style="font-size:1.3em;padding:1rem 2.5rem">
+            🔍 Evaluate My Game Design
+          </button>
+        </div>
+
+        <!-- Results (hidden until evaluated) -->
+        <div id="eval-results" class="eval-results" aria-live="polite">
+
+          <!-- Score Display -->
+          <div class="eval-score-display" id="eval-score-display">
+            <span class="eval-score-number" id="eval-score-number">0/5</span>
+            <div class="eval-score-label" id="eval-score-label-text"></div>
+          </div>
+
+          <!-- Red Flags -->
+          <div class="eval-section eval-section-flags hidden" id="eval-section-flags">
+            <h4>⚠️ Red Flags Detected</h4>
+            <ul></ul>
+          </div>
+
+          <!-- Strengths -->
+          <div class="eval-section eval-section-strengths hidden" id="eval-section-strengths">
+            <h4>✓ Strengths</h4>
+            <ul></ul>
+          </div>
+
+          <!-- Issues -->
+          <div class="eval-section eval-section-issues hidden" id="eval-section-issues">
+            <h4>→ Issues to Fix</h4>
+            <ul></ul>
+          </div>
+
+          <!-- Recommendations -->
+          <div class="eval-section eval-section-recommendations hidden" id="eval-section-recommendations">
+            <h4>💡 Recommendations</h4>
+            <ul></ul>
+          </div>
+
+          <!-- Continue Button -->
+          <div class="btn-row">
+            <button class="btn btn-primary btn-lg hidden" id="level4-continue-btn">
+              Continue to Completion →
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <!--  LEVEL 5: COMPLETION                                     -->
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <article class="level-card locked" id="level-card-5" aria-labelledby="level5-title">
+      <div class="level-card-header">
+        <div class="level-number" aria-hidden="true">5</div>
+        <div class="level-card-title">
+          <h2 id="level5-title">You Did It!</h2>
+          <p>Your game design is complete — here's your full report</p>
+        </div>
+        <span class="level-status-icon" aria-hidden="true">🏆</span>
+      </div>
+
+      <div class="level-card-body">
+        <div class="completion-screen">
+
+          <!-- Celebration -->
+          <span class="completion-celebration" aria-hidden="true">🎉</span>
+          <h2 style="color:var(--cyan);margin-bottom:0.5rem">Game Design Complete!</h2>
+          <p style="color:var(--muted);font-style:italic;margin-bottom:1.5rem">
+            You've gone from mechanic selection to a fully evaluated game design blueprint.
+          </p>
+
+          <!-- All Badges -->
+          <div class="completion-badges" id="completion-badges-display" role="list" aria-label="All earned badges">
+            <!-- Populated by JS -->
+          </div>
+
+          <!-- Summary Card -->
+          <div class="summary-card">
+            <h3>Your Design Summary</h3>
+            <div class="summary-row">
+              <span class="label">Subject / Topic</span>
+              <span class="value" id="summary-subject">—</span>
+            </div>
+            <div class="summary-row">
+              <span class="label">Mechanics Used</span>
+              <span class="value" id="summary-mechanics">—</span>
+            </div>
+            <div class="summary-row">
+              <span class="label">Fun Guidelines Score</span>
+              <span class="value" id="summary-fun-score">—</span>
+            </div>
+            <div class="summary-row">
+              <span class="label">Evaluation Score</span>
+              <span class="value" id="summary-eval-score">—</span>
+            </div>
+            <div class="summary-row">
+              <span class="label">Time Spent</span>
+              <span class="value" id="summary-time">—</span>
+            </div>
+            <div class="summary-row">
+              <span class="label">Status</span>
+              <span class="value" id="summary-status">—</span>
+            </div>
+          </div>
+
+          <!-- Download Buttons -->
+          <div class="download-buttons">
+            <button class="btn btn-outline" id="download-blueprint-final">
+              ⬇ Download Blueprint (.md)
+            </button>
+            <button class="btn btn-outline" id="download-evaluation-final">
+              ⬇ Download Evaluation (.md)
+            </button>
+            <button class="btn btn-golden" id="download-complete-final">
+              ⬇ Download Complete Report (.md)
+            </button>
+          </div>
+
+          <!-- Start Over -->
+          <div style="margin-top:2rem;padding-top:1.5rem;border-top:1.5px solid var(--border)">
+            <button class="btn btn-ghost" id="start-over-btn" style="background:transparent;border:1.5px solid var(--border);color:var(--muted)">
+              ↩ Start Over
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!--  MECHANIC MODAL                                           -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <div
+    class="modal-backdrop"
+    id="mechanic-modal-backdrop"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-mechanic-title"
+    aria-hidden="true"
+  >
+    <div class="modal-box">
+      <button class="modal-close" id="modal-close-btn" aria-label="Close dialog">✕</button>
+
+      <div class="modal-header">
+        <span class="modal-emoji" id="modal-mechanic-emoji" aria-hidden="true">💰</span>
+        <h3 id="modal-mechanic-title">Mechanic Title</h3>
+        <p id="modal-mechanic-desc">Mechanic description goes here.</p>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-section">
+          <h4>What is this mechanic?</h4>
+          <p id="modal-mechanic-desc-full"></p>
+        </div>
+
+        <div class="modal-section">
+          <h4>Why it works for learning:</h4>
+          <ul id="modal-mechanic-why"></ul>
+        </div>
+
+        <div class="modal-section">
+          <h4>Real examples:</h4>
+          <div id="modal-mechanic-examples"></div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-golden btn-lg btn-full" id="modal-choose-btn">
+          Choose This Mechanic
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!--  CONFIRMATION DIALOG                                      -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <div
+    class="confirm-dialog-backdrop"
+    id="confirm-dialog"
+    role="alertdialog"
+    aria-modal="true"
+    aria-labelledby="confirm-title"
+    aria-describedby="confirm-desc"
+  >
+    <div class="confirm-dialog-box">
+      <h3 id="confirm-title">Start Over?</h3>
+      <p id="confirm-desc">This will reset all your progress, selections, and form data. Are you sure?</p>
+      <div class="btn-row">
+        <button class="btn btn-outline" id="confirm-no-btn">Cancel</button>
+        <button class="btn btn-danger" id="confirm-yes-btn">Yes, Start Over</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!--  SCRIPTS                                                  -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <script src="js/game-state.js"></script>
+  <script src="js/level1-mechanics.js"></script>
+  <script src="js/level2-fun-test.js"></script>
+  <script src="js/level3-designer.js"></script>
+  <script src="js/level4-evaluator.js"></script>
+  <script src="js/level5-completion.js"></script>
+
+  <script>
+    /* ── App Bootstrap ── */
+    (function bootstrap() {
+      console.log('App starting...');
+
+      // Initialize game state
+      const state = GameState.init();
+      GameState.syncUI(state);
+
+      // Always init Level 1
+      Level1.init();
+
+      // Initialize already-unlocked levels
+      if (state.progress.level1) Level2.init();
+      if (state.progress.level2) Level3.init();
+      if (state.progress.level3) {
+        const blueprint = state.design_form_blueprint || '';
+        Level4.init(blueprint);
+      }
+      if (state.progress.level4) Level5.init();
+
+      // Restore active level expansion
+      const levelKeys = ['level1', 'level2', 'level3', 'level4', 'level5'];
+      levelKeys.forEach((key, i) => {
+        const card = document.getElementById(`level-card-${i + 1}`);
+        if (!card) return;
+
+        if (state.progress[key]) {
+          // Completed — collapse
+          card.classList.remove('active');
+          card.classList.add('complete');
+          const statusIcon = card.querySelector('.level-status-icon');
+          if (statusIcon) statusIcon.textContent = '✅';
+        } else {
+          // Check if this is the first incomplete level
+          const allPrevDone = levelKeys.slice(0, i).every(k => state.progress[k]);
+          if (allPrevDone) {
+            card.classList.remove('locked');
+            card.classList.add('active');
+          } else if (i > 0) {
+            card.classList.add('locked');
+            card.classList.remove('active');
+          }
+        }
+      });
+
+      console.log('App initialized — current progress:', GameState.getProgressPercent(state) + '%');
+
+      // ── Global Reset — wired here so it works at any level ──────
+      function showResetConfirm() {
+        const dialog = document.getElementById('confirm-dialog');
+        if (dialog) dialog.classList.add('open');
+        console.log('Button clicked: global-reset-btn');
+      }
+      function hideResetConfirm() {
+        const dialog = document.getElementById('confirm-dialog');
+        if (dialog) dialog.classList.remove('open');
+      }
+      function doReset() {
+        console.log('Button clicked: confirm-yes-btn');
+        GameState.reset();
+        location.reload();
+      }
+
+      document.getElementById('global-reset-btn')
+        .addEventListener('click', showResetConfirm);
+      document.getElementById('confirm-yes-btn')
+        .addEventListener('click', doReset);
+      document.getElementById('confirm-no-btn')
+        .addEventListener('click', hideResetConfirm);
+      document.getElementById('confirm-dialog')
+        .addEventListener('click', e => { if (e.target.id === 'confirm-dialog') hideResetConfirm(); });
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') hideResetConfirm();
+      });
+
+      // Also wire the Level 5 "Start Over" button if it's in the DOM
+      const l5StartOver = document.getElementById('start-over-btn');
+      if (l5StartOver) l5StartOver.addEventListener('click', showResetConfirm);
+
+    })();
+  </script>
+
+</body>
+</html>

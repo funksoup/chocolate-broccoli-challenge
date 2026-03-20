@@ -1,0 +1,12 @@
+# GitHub Pages configuration
+# This file tells GitHub Pages to serve the site as plain HTML
+# (no Jekyll theme processing needed — the app is self-contained)
+
+title: Chocolate-Covered Broccoli Challenge
+description: A 5-level tool for designing genuinely fun educational games
+
+# Exclude source/reference files from the published site
+exclude:
+  - README.md
+  - .gitignore
+  - data/mechanic-content.json
