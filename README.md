@@ -5,7 +5,7 @@
 
 A free, browser-based tool that walks educators and learning designers through a structured 5-level process for creating **genuinely fun** educational games — not just quizzes wearing a game costume.
 
-**[▶ Try the live demo →](https://YOUR-USERNAME.github.io/chocolate-broccoli-challenge/)**
+**[▶ Try the live demo →](https://funksoup.github.io/chocolate-broccoli-challenge/)**
 
 ---
 
@@ -48,7 +48,7 @@ The 8 mechanics covered: **Resource Management · Risk/Reward · Puzzles · Time
 No installation needed.
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/chocolate-broccoli-challenge.git
+git clone https://github.com/funksoup/chocolate-broccoli-challenge.git
 cd chocolate-broccoli-challenge
 open index.html        # macOS
 # or: start index.html  (Windows)
@@ -66,7 +66,7 @@ That's it. No `npm install`, no build step, no server.
 3. Under *Source*, select **Deploy from a branch**
 4. Choose branch: **`main`**, folder: **`/ (root)`**
 5. Click **Save**
-6. Your live URL will be: `https://YOUR-USERNAME.github.io/chocolate-broccoli-challenge/`
+6. Your live URL will be: `https://funksoup.github.io/chocolate-broccoli-challenge/`
 
 It takes about 60 seconds to go live after the first push.
 
@@ -97,17 +97,17 @@ git init
 git add .
 git commit -m "Initial commit: Chocolate-Covered Broccoli Challenge"
 git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/chocolate-broccoli-challenge.git
+git remote add origin https://github.com/funksoup/chocolate-broccoli-challenge.git
 git push -u origin main
 ```
 
-Replace `YOUR-USERNAME` with your actual GitHub username.
+Replace `funksoup` with your actual GitHub username.
 
 ### 4. Enable GitHub Pages
 Follow the steps in the *Deploying to GitHub Pages* section above.
 
 ### 5. Update the demo link in this README
-Replace `YOUR-USERNAME` in the live demo link at the top with your actual username, then commit:
+Replace `funksoup` in the live demo link at the top with your actual username, then commit:
 
 ```bash
 git add README.md
