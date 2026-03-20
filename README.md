@@ -43,6 +43,14 @@ The 8 mechanics covered: **Resource Management · Risk/Reward · Puzzles · Time
 
 ---
 
+## Tech Stack
+
+**HTML5 · CSS3 · Vanilla JavaScript (ES6) · Web Storage API (localStorage) · Google Fonts**
+
+No frameworks, no libraries, no build tools, no dependencies — just files. Open `index.html` in a browser and it works. Built with [Claude](https://claude.ai) (AI-assisted development).
+
+---
+
 ## Running Locally
 
 No installation needed.
@@ -167,4 +175,4 @@ MIT — free to use, modify, and share.
 
 ---
 
-*Built with vanilla HTML, CSS, and JavaScript. No frameworks were harmed.*
+*Built with vanilla HTML5, CSS3, and JavaScript. No frameworks were harmed. AI-assisted development with [Claude](https://claude.ai).*
